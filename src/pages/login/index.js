@@ -1,16 +1,20 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Form from 'next/form';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const router = useRouter()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle login logic here
         console.log('Email:', email);
         console.log('Password:', password);
+        router.push('/employees');
     };
 
     return (
@@ -22,7 +26,7 @@ export default function Login() {
             </Link>
             <div className="w-full max-w-md p-8 space-y-8 bg-gray-300 rounded shadow-md">
                 <h2 className="text-2xl font-bold text-center text-indigo-600">Login</h2>
-                <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+                <Form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                     <div className="rounded-md shadow-sm -space-y-px">
                         <div>
                             <label htmlFor="email-address" className="sr-only">
@@ -68,7 +72,7 @@ export default function Login() {
                             Sign in
                         </button>
                     </div>
-                </form>
+                </Form>
             </div>
         </div>
     );
