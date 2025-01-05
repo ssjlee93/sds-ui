@@ -2,8 +2,8 @@ export const employees = [
     {
         id: 1,
         personalInfo: {
-            firstName: 'John',
-            lastName: 'Doe',
+            firstName: 'Hazel',
+            lastName: 'Seo',
             dateOfBirth: '2000-01-15'
         },
         contactInfo: {
