@@ -1,9 +1,20 @@
+'use client';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function Navbar() {
+    const router = useRouter();
+    const path = usePathname();
+
     return (
         <nav className="bg-indigo-700 p-4">
             <div className="container mx-auto flex justify-between items-center">
+                <button
+                    onClick={() => router.back()}
+                    className={`text-gray-300 hover:text-white ${path !== '/' ? 'block' : 'hidden'}`}
+                >
+                    Go Back
+                </button>
                 <div className="text-white text-lg font-bold">
                     <Link href="/">
                         Employee Management
@@ -20,7 +31,7 @@ export default function Navbar() {
                     </Link>
                     <Link href="/employees"
                         className="text-gray-300 hover:text-white">
-                        employees
+                        Employees
                     </Link>
                 </div>
             </div>

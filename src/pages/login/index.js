@@ -19,11 +19,6 @@ export default function Login() {
 
     return (
         <div className="relative flex items-center justify-center min-h-screen bg-black">
-            <Link href="/"
-                className="absolute top-4 left-4 text-white bg-indigo-600 
-                hover:bg-indigo-700 px-3 py-2 rounded-md">
-                Go Back
-            </Link>
             <div className="w-full max-w-md p-8 space-y-8 bg-gray-300 rounded shadow-md">
                 <h2 className="text-2xl font-bold text-center text-indigo-600">Login</h2>
                 <Form className="mt-8 space-y-6" onSubmit={handleSubmit}>

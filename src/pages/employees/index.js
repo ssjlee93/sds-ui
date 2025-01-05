@@ -13,7 +13,7 @@ export default function Employees() {
   const [activeTab, setActiveTab] = useState('personal');
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-500">
       <aside className="w-1/4 bg-slate-300 p-6 shadow-md">
         <h2 className="text-2xl font-semibold mb-6 text-gray-800">Employees</h2>
         <ul className="space-y-4">
@@ -29,23 +29,23 @@ export default function Employees() {
           ))}
         </ul>
       </aside>
-      <div className="w-3/4 p-10 bg-black">
+      <div className="w-3/4 p-10 bg-slate-900">
         <h2 className="text-3xl font-semibold mb-6 text-slate-100">Employee Details</h2>
         <section className="mb-0">
           <button
-            className={`px-4 py-2 rounded-md ${activeTab === 'personal' ? 'text-indigo-600' : 'text-gray-400'}`}
+            className={`px-4 py-2 rounded-md ${activeTab === 'personal' ? 'text-indigo-500' : 'text-gray-400'}`}
             onClick={() => setActiveTab('personal')}
           >
             Personal Info
           </button>
           <button
-            className={`ml-2 px-4 py-2 rounded-md ${activeTab === 'company' ? 'text-indigo-600' : 'text-gray-400'}`}
+            className={`ml-2 px-4 py-2 rounded-md ${activeTab === 'company' ? 'text-indigo-500' : 'text-gray-400'}`}
             onClick={() => setActiveTab('company')}
           >
             Company Info
           </button>
           <button
-            className={`ml-2 px-4 py-2 rounded-md ${activeTab === 'contact' ? 'text-indigo-600' : 'text-gray-400'}`}
+            className={`ml-2 px-4 py-2 rounded-md ${activeTab === 'contact' ? 'text-indigo-500' : 'text-gray-400'}`}
             onClick={() => setActiveTab('contact')}
           >
             Contact Info
