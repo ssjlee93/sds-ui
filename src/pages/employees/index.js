@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { employees } from '@/data/employees.data';
 import TabButton from '@/components/tab-button';
 import DetailsInput from '@/components/details-input';
+import ProfilePhoto from '@/components/profile-photo';
 
 function formatDate(dateString) {
   if (!dateString) return 'N/A';
@@ -39,7 +40,12 @@ export default function Employees() {
           ))}
         </ul>
       </aside>
-      <div className="w-3/4 p-10 bg-slate-100">
+
+      <div className="w-3/4 p-10 bg-slate-100 flex items-start">
+      <section className="bg-slate-900 w-1/4 p-10 my-12">
+        <ProfilePhoto src={selectedEmployee?.profilePhoto} alt={`${selectedEmployee?.personalInfo.firstName} ${selectedEmployee?.personalInfo.lastName}`} />
+      </section>
+      <section className='w-3/4 p-10'>
         <h2 className="text-3xl font-semibold mb-6 text-slate-900">Employee Details</h2>
         <section className="mb-0">
           <TabButton activeTab={activeTab} setActiveTab={setActiveTab} tabName="personal" displayTxt="Personal Info" />
@@ -77,6 +83,7 @@ export default function Employees() {
             <p className="text-lg text-gray-600">Select an employee to see their details.</p>
           )}
         </main>
+        </section>
       </div>
     </div>
   );

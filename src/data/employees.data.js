@@ -1,6 +1,7 @@
 export const employees = [
     {
         id: 1,
+        profilePhoto: '/next.svg',
         personalInfo: {
             firstName: 'Hazel',
             lastName: 'Seo',
