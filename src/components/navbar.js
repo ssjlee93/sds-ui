@@ -5,6 +5,7 @@ import { useRouter, usePathname } from 'next/navigation';
 export default function Navbar() {
     const router = useRouter();
     const path = usePathname();
+    let auth = false;
 
     return (
         <nav className="bg-blue-700 p-4">
@@ -18,7 +19,7 @@ export default function Navbar() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                     </svg>
 
-                    Go Back {console.log("path: "+path)}
+                    Go Back
                 </button>
                 <div className="text-white text-lg font-bold">
                     <Link href="/">
@@ -35,12 +36,12 @@ export default function Navbar() {
                         Home
                     </Link>
                     <Link href="/login"
-                        className="text-gray-300 hover:text-white">
+                        className={`text-gray-300 hover:text-white ${auth ? 'hidden' : 'block'}`}>
                         Login
                     </Link>
-                    <Link href="/employees"
-                        className="text-gray-300 hover:text-white">
-                        Employees
+                    <Link href="/login"
+                        className={`text-gray-300 hover:text-white ${auth ? 'block' : 'hidden'}`}>
+                        Logout
                     </Link>
                 </div>
             </div>
