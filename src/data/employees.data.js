@@ -1,7 +1,7 @@
 export const employees = [
     {
         id: 1,
-        profilePhoto: '/hazel_seo.png',
+        profilePhoto: '/employees/hazel_seo.png',
         personalInfo: {
             firstName: 'Hazel',
             lastName: 'Seo',
@@ -21,7 +21,7 @@ export const employees = [
     },
     {
         id: 2,
-        profilePhoto: 'http://source.unsplash.com/random/200x200?person,1',
+        profilePhoto: '/employees/jane_smith.webp',
         personalInfo: {
             firstName: 'Jane',
             lastName: 'Smith',
@@ -41,7 +41,7 @@ export const employees = [
     },
     {
         id: 3,
-        profilePhoto: '/next.svg',
+        profilePhoto: '/employees/alice_johnson.webp',
         personalInfo: {
             firstName: 'Alice',
             lastName: 'Johnson',
@@ -61,7 +61,7 @@ export const employees = [
     },
     {
         id: 4,
-        profilePhoto: '/next.svg',
+        profilePhoto: '/employees/bob_brown.webp',
         personalInfo: {
             firstName: 'Bob',
             lastName: 'Brown',
@@ -81,7 +81,7 @@ export const employees = [
     },
     {
         id: 5,
-        profilePhoto: '/next.svg',
+        profilePhoto: '/employees/charlie_davis.png',
         personalInfo: {
             firstName: 'Charlie',
             lastName: 'Davis',
