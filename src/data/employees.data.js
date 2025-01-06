@@ -1,26 +1,27 @@
 export const employees = [
     {
         id: 1,
-        profilePhoto: '/next.svg',
+        profilePhoto: '/hazel_seo.png',
         personalInfo: {
             firstName: 'Hazel',
             lastName: 'Seo',
             dateOfBirth: '2000-01-15'
         },
         contactInfo: {
-            email: 'john.doe@samsung.com',
-            phone: '1234567890',
+            email: 'hazel.seo@samsung.com',
+            phone: '123-456-7890',
             address: '123 Main St, Springfield, IL 62701'
         },
         companyInfo: {
-            department: 'Engineering',
-            jobTitle: 'Software Engineer',
+            department: 'Advertising',
+            jobTitle: '3D Artist',
             startDate: '2020-01-15',
             endDate: null,
         }
     },
     {
         id: 2,
+        profilePhoto: 'http://source.unsplash.com/random/200x200?person,1',
         personalInfo: {
             firstName: 'Jane',
             lastName: 'Smith',
@@ -28,7 +29,7 @@ export const employees = [
         },
         contactInfo: {
             email: 'jane.smith@samsung.com',
-            phone: '2019876543', 
+            phone: '201-987-6543', 
             address: '456 Elm St, Metropolis, NY 10001' 
         },
         companyInfo: {
@@ -40,6 +41,7 @@ export const employees = [
     },
     {
         id: 3,
+        profilePhoto: '/next.svg',
         personalInfo: {
             firstName: 'Alice',
             lastName: 'Johnson',
@@ -47,7 +49,7 @@ export const employees = [
         },
         contactInfo: {
             email: 'alice.johnson@samsung.com',
-            phone: '3125551234',
+            phone: '312-555-1234',
             address: '789 Oak St, Chicago, IL 60601'
         },
         companyInfo: {
@@ -59,6 +61,7 @@ export const employees = [
     },
     {
         id: 4,
+        profilePhoto: '/next.svg',
         personalInfo: {
             firstName: 'Bob',
             lastName: 'Brown',
@@ -66,7 +69,7 @@ export const employees = [
         },
         contactInfo: {
             email: 'bob.brown@samsung.com',
-            phone: '4155555678',
+            phone: '415-555-5678',
             address: '101 Pine St, San Francisco, CA 94111'
         },
         companyInfo: {
@@ -78,6 +81,7 @@ export const employees = [
     },
     {
         id: 5,
+        profilePhoto: '/next.svg',
         personalInfo: {
             firstName: 'Charlie',
             lastName: 'Davis',
@@ -85,7 +89,7 @@ export const employees = [
         },
         contactInfo: {
             email: 'charlie.davis@samsung.com',
-            phone: '6175557890',
+            phone: '617-555-7890',
             address: '202 Maple St, Boston, MA 02108'
         },
         companyInfo: {

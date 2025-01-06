@@ -40,51 +40,57 @@ export default function Employees() {
           ))}
         </ul>
       </aside>
-
-      <div className="w-3/4 p-10 bg-slate-100 flex items-start">
-      <section className="bg-slate-900 w-1/4 p-10 my-12">
-        <ProfilePhoto src={selectedEmployee?.profilePhoto} alt={`${selectedEmployee?.personalInfo.firstName} ${selectedEmployee?.personalInfo.lastName}`} />
-      </section>
-      <section className='w-3/4 p-10'>
+      <main className="w-3/4 p-5 bg-slate-100">
         <h2 className="text-3xl font-semibold mb-6 text-slate-900">Employee Details</h2>
-        <section className="mb-0">
-          <TabButton activeTab={activeTab} setActiveTab={setActiveTab} tabName="personal" displayTxt="Personal Info" />
-          <TabButton activeTab={activeTab} setActiveTab={setActiveTab} tabName="company" displayTxt="Company Info" />
-          <TabButton activeTab={activeTab} setActiveTab={setActiveTab} tabName="contact" displayTxt="Contact Info" />
-        </section>
-        <main className="bg-slate-300 p-6 shadow-md">
-          {selectedEmployee ? (
-            <div>
-              {activeTab === 'personal' && (
-                <section className="space-y-4">
-                  <DetailsInput displayTxt="First Name" value={selectedEmployee.personalInfo.firstName} />
-                  <DetailsInput displayTxt="Last Name" value={selectedEmployee.personalInfo.lastName} />
-                  <DetailsInput displayTxt="Date of Birth" value={formatDate(selectedEmployee.personalInfo.dateOfBirth)} />
-                </section>
+        <div className="flex items-start mb-6">
+          <section className="my-4 ml-0 py-4 flex flex-col justify-center">
+            <ProfilePhoto src={selectedEmployee.profilePhoto} alt={`${selectedEmployee.firstName} ${selectedEmployee.lastName}`} size={200} />
+            <button className="mt-4 mx-auto px-4 py-2 bg-blue-700 text-white rounded-md w-3/4 font-bold">Edit Profile</button>
+            <button className="mt-2 mx-auto px-4 py-2 bg-blue-900 text-white rounded-md w-3/4 font-bold" type="file">Upload photo</button>
+          </section>
+          <div className="w-3/4 m-2">
+            <section id="tabButtons" className="mb-0">
+              <TabButton activeTab={activeTab} setActiveTab={setActiveTab} tabName="personal" displayTxt="Personal Info" />
+              <TabButton activeTab={activeTab} setActiveTab={setActiveTab} tabName="company" displayTxt="Company Info" />
+              <TabButton activeTab={activeTab} setActiveTab={setActiveTab} tabName="contact" displayTxt="Contact Info" />
+            </section>
+
+            <main className="bg-white p-6 shadow-md rounded-lg">
+              {selectedEmployee ? (
+                <div>
+                  {activeTab === 'personal' && (
+                    <section className="space-y-4">
+                      <DetailsInput displayTxt="First Name" value={selectedEmployee.personalInfo.firstName} />
+                      <DetailsInput displayTxt="Last Name" value={selectedEmployee.personalInfo.lastName} />
+                      <DetailsInput displayTxt="Date of Birth" value={formatDate(selectedEmployee.personalInfo.dateOfBirth)} />
+                    </section>
+                  )}
+                  {activeTab === 'company' && (
+                    <section className="space-y-4">
+                      <DetailsInput displayTxt="Employee ID" value={selectedEmployee.id} />
+                      <DetailsInput displayTxt="Department" value={selectedEmployee.companyInfo.department} />
+                      <DetailsInput displayTxt="Position" value={selectedEmployee.companyInfo.jobTitle} />
+                      <DetailsInput displayTxt="Start Date" value={formatDate(selectedEmployee.companyInfo.startDate)} />
+                      <DetailsInput displayTxt="End Date" value={selectedEmployee.companyInfo.endDate ? formatDate(selectedEmployee.companyInfo.endDate) : 'N/A'} />
+                    </section>
+                  )}
+                  {activeTab === 'contact' && (
+                    <section className="space-y-4">
+                      <DetailsInput displayTxt="Email" value={selectedEmployee.contactInfo.email} />
+                      <DetailsInput displayTxt="Phone" value={selectedEmployee.contactInfo.phone} />
+                      <DetailsInput displayTxt="Address" value={selectedEmployee.contactInfo.address} />
+                    </section>
+                  )}
+                </div>
+              ) : (
+                <p className="text-lg text-gray-600">Select an employee to see their details.</p>
               )}
-              {activeTab === 'company' && (
-                <section className="space-y-4">
-                  <DetailsInput displayTxt="Employee ID" value={selectedEmployee.id} />
-                  <DetailsInput displayTxt="Department" value={selectedEmployee.companyInfo.department} />
-                  <DetailsInput displayTxt="Position" value={selectedEmployee.companyInfo.jobTitle} />
-                  <DetailsInput displayTxt="Start Date" value={formatDate(selectedEmployee.companyInfo.startDate)} />
-                  <DetailsInput displayTxt="End Date" value={selectedEmployee.companyInfo.endDate ? formatDate(selectedEmployee.companyInfo.endDate) : 'N/A'} />
-                </section>
-              )}
-              {activeTab === 'contact' && (
-                <section className="space-y-4">
-                  <DetailsInput displayTxt="Email" value={selectedEmployee.contactInfo.email} />
-                  <DetailsInput displayTxt="Phone" value={selectedEmployee.contactInfo.phone} />
-                  <DetailsInput displayTxt="Address" value={selectedEmployee.contactInfo.address} />
-                </section>
-              )}
-            </div>
-          ) : (
-            <p className="text-lg text-gray-600">Select an employee to see their details.</p>
-          )}
-        </main>
-        </section>
-      </div>
+            </main>
+          </div>
+        </div>
+
+
+      </main>
     </div>
   );
 }
